@@ -87,6 +87,7 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_CONFIG := Spacewar_defconfig
 TARGET_KERNEL_SOURCE := kernel/nothing/Spacewar
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
@@ -127,6 +128,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-08-01
+
+# Sepolicy
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
