@@ -7,6 +7,11 @@
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    vendor/nxp/nfc
+
 # Include GSI keys
 #$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
@@ -181,6 +186,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libhidltransport.vendor \
     libhwbinder.vendor
+
+# NFC
+PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.2-service.pn8x \
+    NfcNci \
+    SecureElement \
+    Tag
 
 # Vibrator
 PRODUCT_PACKAGES += \
