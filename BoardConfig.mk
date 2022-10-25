@@ -9,11 +9,23 @@ DEVICE_PATH := device/nothing/Spacewar
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    odm \
+    product \
     system \
     system_ext \
-    product \
+    vbmeta \
+    vbmeta_system \
     vendor \
-    odm
+    vendor_boot
+
+BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_ext vendor
+
+BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
+
+TARGET_COPY_OUT_ODM := odm
+
 BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Architecture
