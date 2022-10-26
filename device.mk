@@ -13,7 +13,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/nxp/nfc
 
 # Include GSI keys
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
